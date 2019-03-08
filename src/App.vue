@@ -4,9 +4,6 @@
 
 <script>
 export default {
-  created () {
-    console.warn('Hello from APP')
-  }
 }
 </script>
 

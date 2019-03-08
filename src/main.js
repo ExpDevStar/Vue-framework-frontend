@@ -1,10 +1,12 @@
 'use strict'
 
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
+
+const vueAppElement = document.querySelector('#vue-app')
 
 window.vueApp = new Vue({
-  el: window.vueAppElement,
+  el: vueAppElement || document.body,
   data: {},
   components: { App },
   template: '<App />',
