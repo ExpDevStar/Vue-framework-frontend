@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "autoprefixer": "^9.4.10",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^5.0.0",
@@ -47,6 +48,10 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-notifier": "^5.4.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "scss-loader": "0.0.1",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.8",
     "webpack": "^4.29.6",
