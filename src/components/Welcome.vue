@@ -2,7 +2,7 @@
   <div :class="[$style.wrapper]">
     <div :class="[$style.table]">
       <div :class="[$style.table__row]">
-        <div :class="[$style.table__cell, $style.table__cell_main]">
+        <div :class="[$style.table__cell, $style.table__cell_main, $style.login__info]">
           <div :class="[$style.header]">
             Для работы с системой необходимо авторизоваться.
           </div>
@@ -183,6 +183,16 @@ export default {
   &__error {
     @include fontSize3();
     color: $color-error;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login__info {
+    display: none;
+  }
+
+  .table__cell {
+    vertical-align: top;
   }
 }
 </style>
