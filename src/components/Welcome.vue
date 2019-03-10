@@ -21,6 +21,7 @@
             :class="[$style.signin_form]"
             data-vv-scope="loginform"
             @submit.prevent="onFormSubmit"
+            autocomplete="off"
           >
             <InputText
               v-model="loginInput"
@@ -60,6 +61,20 @@
                 </div>
               </div>
             </div>
+            <div :class="[$style.additional]">
+
+            </div>
+            <router-link
+              tag="a"
+              to="/recover"
+              :class="[$style.additional__link]"
+            >Восстановить пароль</router-link>
+            /
+            <router-link
+              tag="a"
+              to="/signup"
+              :class="[$style.additional__link, $style.additional__link_dashed]"
+            >Зарегистрироваться</router-link>
           </form>
         </div>
       </div>
@@ -173,8 +188,8 @@ export default {
   margin-bottom: $x4;
 }
 
-.auth{
-  margin-left: $margin-base / 2;
+.auth {
+  margin-left: $margin-base;
 
   &__license {
     @include fontSize1();
@@ -183,6 +198,25 @@ export default {
   &__error {
     @include fontSize3();
     color: $color-error;
+  }
+}
+
+.additional {
+  margin-top: $x4;
+
+  &__link {
+    display: inline-block;
+    color: $color-text-contrast;
+    text-decoration: none;
+    @include fontSize2();
+
+    &_dashed {
+      border-bottom: 1px dashed $color-text-contrast;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-text-contrast;
+    }
   }
 }
 

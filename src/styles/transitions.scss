@@ -1,0 +1,9 @@
+/**
+ * Fade
+ */
+ :global(.fade-enter-active), :global(.fade-leave-active) {
+  transition: opacity .3s;
+}
+:global(.fade-enter), :global(.fade-leave-to) {
+  opacity: 0;
+}

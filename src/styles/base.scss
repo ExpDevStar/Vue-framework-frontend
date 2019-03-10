@@ -22,12 +22,13 @@ $color-bg: rgba(239, 231, 217, 1);
 $color-bg-disabled: rgba(240, 240, 240, 0.48);
 $color-bg-ld: rgb(214, 204, 186);
 $color-bg-secondary: rgba(152, 140, 149, 1);
-$color-bg-secondary-hover: rgba(152, 140, 149, 1);
-$color-bg-secondary-active: rgba(152, 140, 149, 1);
+$color-bg-secondary-hover: rgb(175, 158, 171);
+$color-bg-secondary-active: rgb(138, 124, 134);
 $color-header-text: rgba(86, 86, 86, 1);
 $color-text: rgba(51, 51, 51, 1);
 $color-text-secondary: rgb(143, 143, 143);
 $color-text-contrast: rgb(236, 236, 236);
+$color-text-contrast-disabled: rgba(236, 236, 236, 0.48);
 $color-text-meta: rgb(192, 192, 192);
 $color-link-secondary: rgb(0, 116, 197);
 $color-border: rgba(0, 0, 0, 0.24);
@@ -35,6 +36,7 @@ $color-border-active: rgba(0, 0, 0, 0.48);
 $color-border-hover: rgba(0, 0, 0, 0.24);
 $color-border-focus: rgba(0, 0, 0, 0.24);
 $color-error: rgb(187, 58, 58);
+$color-success: rgb(58, 187, 112);
 
 /* FONTS */
 

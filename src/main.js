@@ -25,6 +25,7 @@ const vueAppElement = document.querySelector('#vue-app')
 window.vueApp = new Vue({
   el: vueAppElement || document.body,
   data: {
+    rsk: '6LfhW20UAAAAADa9DGJSwkbulFIWSKhkSS-N0Glo'
   },
   store,
   components: { App },

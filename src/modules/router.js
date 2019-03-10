@@ -12,6 +12,14 @@ export default new Router({
       component: Managers.Main
     },
     {
+      path: '/signup',
+      component: Managers.SignUp
+    },
+    {
+      path: '/recover',
+      component: Managers.RecoverPassword
+    },
+    {
       path: '*',
       component: Managers.NotFound
     }

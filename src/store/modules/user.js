@@ -42,6 +42,9 @@ const actions = {
       }
       return res
     })
+  },
+  recover ({ state }, data) {
+    return api('user_recover_password', data, 'POST')
   }
 }
 

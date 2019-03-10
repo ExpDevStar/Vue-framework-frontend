@@ -56,7 +56,7 @@
                 :type="type"
                 :placeholder="placeholder"
                 :disabled="disabled"
-                :value="value"
+                :value="type === 'password' ? '' : value"
                 :autocomplete="autocomplete"
                 :maxlength="maxLengthForce || 'none'"
                 :rows="rows"

@@ -54,6 +54,7 @@ export default {
   user-select: none;
   text-align: center;
   cursor: pointer;
+  white-space: nowrap;
 
   &_big {
     @include fontSize3();
@@ -82,25 +83,26 @@ export default {
     }
   }
 
-  &_disabled {
-    pointer-events: none;
-    background: $color-primary-disabled;
-    cursor: not-allowed;
-  }
-
   &_default {
-    color: $color-text;
+    color: $color-text-contrast;
     background: $color-bg-secondary;
 
     &:hover {
       background: $color-bg-secondary-hover;
-      color: $color-text;
+      color: $color-text-contrast;
     }
 
     &:active {
       background: $color-bg-secondary-active;
-      color: $color-text;
+      color: $color-text-contrast;
     }
+  }
+
+  &_disabled {
+    pointer-events: none;
+    background: $color-primary-disabled;
+    color: $color-text-contrast-disabled;
+    cursor: not-allowed;
   }
 }
 </style>
