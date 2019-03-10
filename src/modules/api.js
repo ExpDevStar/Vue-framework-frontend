@@ -3,7 +3,8 @@ import 'whatwg-fetch'
 const availableMethods = {
   'user_info': '/api/personal/info',
   'user_login': '/api/personal/login',
-  'user_recover_password': '/api/personal/recover'
+  'user_recover_password': '/api/personal/recover',
+  'user_signup': '/api/personal/register'
 }
 
 let requestSettings = {

@@ -285,7 +285,7 @@ export default {
       validate: (text) => {
         const validateInput = (text) => {
           return Promise.resolve({
-            valid: text.match(/^[a-zA-Z][a-zA-Z\d_]{2,}$/)
+            valid: text.match(/^[a-zA-Z]([._]{0,1}[a-zA-Z\d]){2,}$/)
           })
         }
         return Promise.resolve(validateInput(text))

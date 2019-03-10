@@ -43,6 +43,18 @@ const actions = {
       return res
     })
   },
+  signup ({ state }, data) {
+    const formatedData = {
+      email: data.email,
+      familia: data.surname,
+      'g-recaptcha-response': data['g-recaptcha-response'],
+      imia: data.name,
+      login: data.login,
+      otchestvo: data.secondname,
+      password: data.password
+    }
+    return api('user_signup', formatedData, 'POST')
+  },
   recover ({ state }, data) {
     return api('user_recover_password', data, 'POST')
   }

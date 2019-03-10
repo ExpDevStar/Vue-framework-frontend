@@ -149,7 +149,7 @@ export default {
 @import "../styles/transitions.scss";
 
 .recover_form {
-  max-width: $size-grid * 20;
+  max-width: $size-grid * 25;
   margin: $margin-base auto;
 }
 
