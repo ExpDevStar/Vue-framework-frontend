@@ -1,5 +1,6 @@
 node_modules/
 build/cert/
+dist/
 npm-debug.log*
 
 #Editor
