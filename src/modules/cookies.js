@@ -7,7 +7,7 @@ function get (name) {
 
 function set (name, value, options) {
   options = options || {}
-  options.domain = '.olymp.bmstu.ru'
+  options.domain = '.bmstu.ru'
 
   let expires = options.expires
 

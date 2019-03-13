@@ -260,6 +260,7 @@ export default {
 .recover_form {
   max-width: $size-grid * 25;
   margin: $margin-base auto;
+  padding: 0 $padding-base;
 }
 
 .header {

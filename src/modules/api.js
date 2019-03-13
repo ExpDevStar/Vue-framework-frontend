@@ -4,7 +4,8 @@ const availableMethods = {
   'user_info': '/api/personal/info',
   'user_login': '/api/personal/login',
   'user_recover_password': '/api/personal/recover',
-  'user_signup': '/api/personal/register'
+  'user_signup': '/api/personal/register',
+  'test_tasks': '/api/personal/info'
 }
 
 let requestSettings = {

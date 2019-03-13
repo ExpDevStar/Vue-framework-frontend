@@ -10,7 +10,8 @@ const state = {
 
 const getters = {
   loggedin: state => !!(state.data && state.data.id),
-  get: state => state.data
+  get: state => state.data,
+  ready: state => state.status
 }
 
 const actions = {
@@ -30,10 +31,11 @@ const actions = {
       return { ...user }
     }
 
-    return api('user_info', {}, 'GET').then(response => {
-      commit('set', apiFormatter(response))
-      return response
-    })
+    return api('user_info', {}, 'GET')
+      .then(response => {
+        commit('set', apiFormatter(response))
+        return response
+      })
   },
   login ({ state }, data) {
     return api('user_login', data, 'POST').then(res => {
@@ -42,6 +44,10 @@ const actions = {
       }
       return res
     })
+  },
+  logout ({ state, commit }, data) {
+    cookies.remove('bmstuOlympAuth')
+    commit('set', {})
   },
   signup ({ state }, data) {
     const formatedData = {
@@ -63,6 +69,7 @@ const actions = {
 const mutations = {
   set (state, data) {
     state.data = data
+    state.status = true
   }
 }
 

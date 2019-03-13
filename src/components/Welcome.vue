@@ -134,10 +134,10 @@ export default {
           password: this.passwordInput
         })
           .then(response => {
-            this.process = false
             if (response.res_code === 'OK') {
               this.requestData()
             } else {
+              this.process = false
               this.error = response.res_msg
             }
           })
@@ -227,6 +227,10 @@ export default {
 
   .table__cell {
     vertical-align: top;
+  }
+
+  .signin_form {
+    padding: 0;
   }
 }
 </style>

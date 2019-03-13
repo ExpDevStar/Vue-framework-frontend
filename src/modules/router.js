@@ -20,6 +20,18 @@ export default new Router({
       component: Managers.RecoverPassword
     },
     {
+      path: '/profile',
+      component: Managers.Profile
+    },
+    {
+      path: '/test/:category',
+      component: Managers.Test,
+      props: route => ({
+        task: Number(route.query.task) || 1,
+        category: route.params.category
+      })
+    },
+    {
       path: '*',
       component: Managers.NotFound
     }
