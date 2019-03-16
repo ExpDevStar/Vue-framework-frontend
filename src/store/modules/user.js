@@ -25,7 +25,8 @@ const actions = {
           name: response.imia,
           surname: response.familia,
           email: response.email,
-          login: response.login
+          login: response.login,
+          test_available: !!(response.secs && response.secs.length)
         })
       }
       return { ...user }
@@ -40,7 +41,7 @@ const actions = {
   login ({ state }, data) {
     return api('user_login', data, 'POST').then(res => {
       if (res.res_code === 'OK') {
-        cookies.set('bmstuOlympAuth', res.res_data, { expires: 300 })
+        cookies.set('bmstuOlympAuth', res.res_data, { expires: 3600 })
       }
       return res
     })

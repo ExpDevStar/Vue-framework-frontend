@@ -5,12 +5,14 @@ const availableMethods = {
   'user_login': '/api/personal/login',
   'user_recover_password': '/api/personal/recover',
   'user_signup': '/api/personal/register',
-  'test_tasks': '/api/personal/info'
+  'test_tasks': '/api/personal/info',
+  'test_started_time': '/api/personal/seconds',
+  'test_answers': '/api/personal/loaded'
 }
 
 let requestSettings = {
   headers: {
-    'Content-Type': 'application/json'
+    'Cache': 'no-cache'
   },
   credentials: 'include',
   mode: 'cors'
@@ -57,8 +59,14 @@ export default function (method, data, crud) {
   let params
 
   let url = availableMethods[method] || null
-  if (!url) {
+  if (!url && !data.force) {
     throw new Error('Unknown api method!')
+  }
+
+  if (data.force) {
+    url = '/api/personal' + method
+  } else {
+    requestSettings['Content-Type'] = 'application/json'
   }
 
   switch (crud) {
@@ -81,6 +89,6 @@ export default function (method, data, crud) {
     body
   }, requestSettings))
     .then(
-      response => response.json()
+      response => data.force ? response.text() : response.json()
     )
 }

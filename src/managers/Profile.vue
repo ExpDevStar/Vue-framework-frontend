@@ -1,7 +1,12 @@
 <template>
   <div :class="[$style.wrapper]">
     <div v-if="ready && loggedin" :class="[$style.content]">
-      Потом тут будет профиль, пока только ссылка на <router-link tag="a" to="/test/programming">систему выдачи заданий</router-link>
+      <template v-if="testNotAvailable">
+        У Вас нет доступных тестов для прохождения
+      </template>
+      <template v-else>
+        Потом тут будет профиль, пока только ссылка на <router-link tag="a" to="/test/programming">систему выдачи заданий</router-link>
+      </template>
     </div>
     <div :class="[$style.preloader]" v-else>
       <Preloader />
@@ -21,10 +26,14 @@ export default {
   computed: {
     ...mapGetters('user', [
       'loggedin',
-      'ready'
+      'ready',
+      'get'
     ]),
     needAuth () {
       return this.ready && !this.loggedin
+    },
+    testNotAvailable () {
+      return this.ready && !(this.loggedin && this.get.test_available)
     }
   },
   watch: {

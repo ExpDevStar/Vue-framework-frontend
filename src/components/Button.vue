@@ -57,9 +57,9 @@ export default {
   white-space: nowrap;
 
   &_big {
-    @include fontSize3();
+    @include fontSize6();
     border-radius: $border-radius;
-    padding: $padding-base / 2 $padding-base;
+    padding: $padding-base $padding-base * 2;
   }
 
   &_small {

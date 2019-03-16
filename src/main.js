@@ -8,6 +8,10 @@ import store from './store'
 import VeeValidate from 'vee-validate'
 import VeeValidateRu from './const/VeeValidateRu'
 
+import filterClock from './filters/clock'
+
+Vue.filter('clock', filterClock)
+
 Vue.use(VeeValidate, {
   inject: false,
   validator: 'new',

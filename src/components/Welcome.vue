@@ -135,7 +135,14 @@ export default {
         })
           .then(response => {
             if (response.res_code === 'OK') {
-              this.requestData()
+              this.$nextTick(() => {
+                this.requestData()
+                  .then(response => {
+                    if (response.res_code === 'OK') {
+                      this.$router.push({ path: '/test/programming' })
+                    }
+                  })
+              })
             } else {
               this.process = false
               this.error = response.res_msg
