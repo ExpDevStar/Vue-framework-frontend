@@ -137,6 +137,7 @@ const actions = {
 
     return api(data.url, { force: true }, 'GET')
       .then(response => {
+        console.log(response)
         commit('setAnswerSource', {
           id: data.id,
           category: data.category,

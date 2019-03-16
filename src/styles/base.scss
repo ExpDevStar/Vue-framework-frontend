@@ -134,6 +134,8 @@ $x12: 48px;
 $x15: 60px;
 $x20: 80px;
 
+$half: 50%;
+
 @mixin borderRadiusBottom() {
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;

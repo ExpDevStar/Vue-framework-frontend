@@ -12,7 +12,7 @@
       </div>
     </router-link>
     <div :class="[$style.profile]" v-if="ready && loggedin">
-      <router-link tag="a" to="/profile">{{ name }}</router-link>
+      <router-link tag="a" to="/test/programming">#{{ uid }} {{ name }}</router-link>
       |
       <a :class="[$style.logout]" @click="onLogoutClick">Выход</a>
     </div>
@@ -32,6 +32,12 @@ export default {
     name () {
       if (this.ready && this.loggedin) {
         return `${this.get.name} ${this.get.surname}`
+      }
+      return ''
+    },
+    uid () {
+      if (this.ready && this.loggedin) {
+        return this.get.id
       }
       return ''
     }

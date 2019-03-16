@@ -242,7 +242,7 @@ export default {
 
 .preloader {
   position: absolute;
-  left: calc(50% - $size-preloader / 2);
+  left: calc(50% - 25px);
   z-index: 1;
   margin: auto;
 }

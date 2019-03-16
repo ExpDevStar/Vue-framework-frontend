@@ -10,14 +10,6 @@ const availableMethods = {
   'test_answers': '/api/personal/loaded'
 }
 
-let requestSettings = {
-  headers: {
-    'Cache': 'no-cache'
-  },
-  credentials: 'include',
-  mode: 'cors'
-}
-
 function toParams (params) {
   let pairs = []
   let proc
@@ -63,10 +55,18 @@ export default function (method, data, crud) {
     throw new Error('Unknown api method!')
   }
 
+  let requestSettings = {
+    headers: {
+      'Cache': 'no-cache'
+    },
+    credentials: 'include',
+    mode: 'cors'
+  }
+
   if (data.force) {
     url = '/api/personal' + method
   } else {
-    requestSettings['Content-Type'] = 'application/json'
+    requestSettings.headers['Content-Type'] = 'application/json'
   }
 
   switch (crud) {
@@ -84,6 +84,7 @@ export default function (method, data, crud) {
       break
   }
 
+  console.log(requestSettings)
   return fetch(url + (params ? `?${params}` : ''), Object.assign({
     method: crud,
     body
